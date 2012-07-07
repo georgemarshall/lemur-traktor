@@ -153,7 +153,7 @@
 <VARIABLE name="release=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Loop_Mash_Container_A/HotcueA/release" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="hold=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Loop_Mash_Container_A/HotcueA/hold" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Loop_Mash_Container_A/HotcueA/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="color(MIDI_ARGS)" script="setattribute(Text, 'content', 'Hello');" trigger_script="" trigger_type="3" trigger="1" osc_message="/Loop_Mash_Container_A/HotcueA/color" midi_message="0xB0,0xB0,0,127" midi_target="-2" flag="0"/>
+<SCRIPT name="color(MIDI_ARGS)" script="setattribute(Text, 'content', 'Hello');" trigger_script="" trigger_type="3" trigger="1" osc_message="/Loop_Mash_Container_A/HotcueA/color" midi_message="0xB0,0xBF,0,127" midi_target="0" flag="1"/>
 </WINDOW>
 <WINDOW class="Text" text="Text" x="224" y="17" width="160" height="48" id="11" state="241" group="0" font="tahoma,14,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="8355711" content="Text">
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Loop_Mash_Container_A/Text/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
@@ -203,7 +203,6 @@
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Loop_Mash_Container_A/Loop_A/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 </WINDOW>
 </WINDOW>
-<SCRIPT name="blah(MIDI_ARGS)" script="setattribute(Text, 'content', 'Hello');" trigger_script="" trigger_type="3" trigger="1" osc_message="/Loop_Mash_Container_A/blah" midi_message="0xB0,0xB4,0,127" midi_target="-2" flag="1"/>
 </WINDOW>
 <WINDOW class="Container" text="EQ_Container_A" x="0" y="298" width="420" height="106" id="218" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" color="15691" label="1" tabbar="1" meta="0">
 <WINDOW class="Knob" text="Filter_A" x="0" y="0" width="92" height="92" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="0" kbmouse_target="-2" color="15691,8339012" cursor="0" grid="0" grid_steps="1" label="0" mode="1" physic="1" precision="3" type="1" unit="" value="0">
