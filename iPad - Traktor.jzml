@@ -134,9 +134,9 @@
 <VARIABLE name="hold=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Loop_Mash_Container_A/HotcueA/hold" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Loop_Mash_Container_A/HotcueA/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="self=getobject()" send="1" osc_target="0" osc_trigger="1" osc_message="/Loop_Mash_Container_A/HotcueA/self" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="color(MIDI_ARGS)" script="decl current_colors = getattribute(self, 'colors');
-current_colors[MIDI_ARGS[0] - 19] = button_colors[MIDI_ARGS[1]];
-setattribute(self, 'colors', current_colors);" trigger_script="" trigger_type="3" trigger="1" osc_message="/Loop_Mash_Container_A/HotcueA/color" midi_message="0xB1,0xB1,19,23" midi_target="0" flag="1"/>
+<SCRIPT name="color(MIDI_ARGS)" script="decl colors = getattribute(self, 'colors');
+colors[floor(MIDI_ARGS[1] / 7)] = button_colors[MIDI_ARGS[1] % 7];
+setattribute(self, 'colors', colors);" trigger_script="" trigger_type="3" trigger="1" osc_message="/Loop_Mash_Container_A/HotcueA/color" midi_message="0xB1,0xB1,19,19" midi_target="0" flag="1"/>
 <SCRIPT name="init()" script="setattribute(self, 'colors', {black, black, black, black, black});" trigger_script="" trigger_type="5" trigger="1" osc_message="/Loop_Mash_Container_A/HotcueA/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
@@ -573,9 +573,9 @@ setattribute(self, 'colors', current_colors);" trigger_script="" trigger_type="3
 <VARIABLE name="hold=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Loop_Mash_Container_B/HotcueB/hold" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/Loop_Mash_Container_B/HotcueB/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
 <VARIABLE name="self=getobject()" send="1" osc_target="0" osc_trigger="1" osc_message="/Loop_Mash_Container_B/HotcueB/self" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
-<SCRIPT name="color(MIDI_ARGS)" script="decl current_colors = getattribute(self, 'colors');
-current_colors[MIDI_ARGS[0] - 72] = button_colors[MIDI_ARGS[1]];
-setattribute(self, 'colors', current_colors);" trigger_script="" trigger_type="3" trigger="1" osc_message="/Loop_Mash_Container_B/HotcueB/color" midi_message="0xB1,0xB1,72,76" midi_target="0" flag="1"/>
+<SCRIPT name="color(MIDI_ARGS)" script="decl colors = getattribute(self, 'colors');
+colors[floor(MIDI_ARGS[1] / 7)] = button_colors[MIDI_ARGS[1] % 7];
+setattribute(self, 'colors', colors);" trigger_script="" trigger_type="3" trigger="1" osc_message="/Loop_Mash_Container_B/HotcueB/color" midi_message="0xB1,0xB1,72,72" midi_target="0" flag="1"/>
 <SCRIPT name="init()" script="setattribute(self, 'colors', {black, black, black, black, black});" trigger_script="" trigger_type="5" trigger="1" osc_message="/Loop_Mash_Container_B/HotcueB/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
@@ -817,6 +817,19 @@ setattribute(self, 'colors', current_colors);" trigger_script="" trigger_type="3
 </WINDOW>
 <WINDOW class="LemurMenu" text="FX_Sel6" x="873" y="6" width="75" height="18" id="364" state="241" group="0" font="tahoma,14,0" send="1" osc_target="-2" midi_target="0" kbmouse_target="-2" color="8355711" scale="1" content="NONE,BEATM,FLANG,FLN-P,FLN-F,GATER,DELAY,T3DELA,FLT-O,FLT-P,F92-O,F92-P,PHASR,PHS-P,PHS-F,REVGR,TTFX,ICEVB,REVRB,T3REVR,RINGM,LOFI,MHDRV,TRANS,SLICER,FFTR,PFTR,TPDELA,RMPDLY,ABOUN,BOUNCE">
 <PARAM name="selection=" value="0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/FX_Sel6/selection" midi_target="0" midi_trigger="1" midi_message="0xB0,0xB0,56,56" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+</WINDOW>
+<WINDOW class="Pads" text="LoopA" x="0" y="460" width="416" height="36" id="365" state="1" group="0" font="tahoma,10,0" send="1" osc_target="-2" midi_target="-2" kbmouse_target="-2" capture="1" color="7566195,4354600" column="11" label="0" multicolor="1" multilabel="1" row="1">
+<PARAM name="x=" value="0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000,0.000000" send="17" osc_target="0" osc_trigger="1" osc_message="/LoopA/x" midi_target="-2" midi_trigger="1" midi_message="0xB6,0xB6,0,10" midi_scale="0,16383" osc_scale="0.000000,1.000000" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="attack=0" send="0" osc_target="0" osc_trigger="1" osc_message="/LoopA/attack" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="decay=0" send="0" osc_target="0" osc_trigger="1" osc_message="/LoopA/decay" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="sustain=1" send="0" osc_target="0" osc_trigger="1" osc_message="/LoopA/sustain" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="release=0" send="0" osc_target="0" osc_trigger="1" osc_message="/LoopA/release" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="hold=0" send="0" osc_target="0" osc_trigger="1" osc_message="/LoopA/hold" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="light=0" send="0" osc_target="0" osc_trigger="1" osc_message="/LoopA/light" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="labels={'1/32', '1/16', '1/8', '1/4', '1/2', '1', '2', '4', '8', '16', '32'}" send="1" osc_target="0" osc_trigger="1" osc_message="/LoopA/labels" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<VARIABLE name="self=getobject()" send="1" osc_target="0" osc_trigger="1" osc_message="/LoopA/self" midi_target="-1" midi_trigger="1" midi_message="0x90,0x90,0,0" midi_scale="0,16383" kbmouse_target="-1" kbmouse_trigger="1" kbmouse_message="0,0,0" kbmouse_scale="0,1,0,1"/>
+<SCRIPT name="init()" script="setattribute(self, 'color', {white, green});
+setattribute(self, 'labels', labels);" trigger_script="" trigger_type="5" trigger="1" osc_message="/LoopA/init" midi_message="0x90,0x90,0,0" midi_target="-1" flag="1"/>
 </WINDOW>
 </WINDOW>
 <WINDOW class="JAZZINTERFACE" text="Decks C/D" x="0" y="0" width="1024" height="724" id="2" state="0" group="0" font="tahoma,11,0" >
